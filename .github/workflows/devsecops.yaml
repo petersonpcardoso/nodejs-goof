@@ -1,0 +1,19 @@
+# This is a basic workflow that is manually triggered
+name: DevSecOps Pipeline
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  sast:
+    name: SAST with Bearer CLI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Bearer CLI (SAST)
+        uses: bearer/bearer-action@v1
+        with:
+          version: latest
+          scan-dir: .  # Escaneia todo o repositório
+          severity: critical,high  # Foca em vulnerabilidades críticas e altas
+          # Opcional: fail-on-finding: true (falha o pipeline se achar algo)
