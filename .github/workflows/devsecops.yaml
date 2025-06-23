@@ -13,6 +13,5 @@ jobs:
       - name: Run Bearer CLI (SAST)
         uses: bearer/bearer-action@v2
         with:
-          version: latest
           severity: critical,high  # Foca em vulnerabilidades críticas/altas
           # Opcional: fail-on-finding: true (falha o pipeline se achar algo)
