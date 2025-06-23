@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Run Bearer CLI (SAST)
-        uses: bearer/bearer-action@v1
+        uses: bearer/bearer-action@v2
         with:
           version: latest
           severity: critical,high  # Foca em vulnerabilidades críticas/altas
