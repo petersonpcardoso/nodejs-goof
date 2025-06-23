@@ -14,6 +14,5 @@ jobs:
         uses: bearer/bearer-action@v2
         with:
           version: latest
-          scan-dir: .  # Escaneia todo o repositório
           severity: critical,high  # Foca em vulnerabilidades críticas/altas
           # Opcional: fail-on-finding: true (falha o pipeline se achar algo)
